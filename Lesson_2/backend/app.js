@@ -1,3 +1,4 @@
+const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
@@ -14,6 +15,14 @@ app
     next();
   })
   .use('/professional', professionalRoutes);
+
+// app.use(express.static('./frontend'));
+
+// app.get('/', function (req, res) {
+//   res.json('This is my response');
+// });
+
+// app.get('/', (req, res) => {});
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
